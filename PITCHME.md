@@ -8,7 +8,7 @@
 
 ---
 
-## Why Use This
+## 为什么使用this
 
 ```javascript
 function identify() {
@@ -37,6 +37,7 @@ speak.call( you );
 ---
 ## Optional 
 - 你也可以明确地把环境变量传递给identify() & speak()
+
 ```javascript
 function identify(context) {
 	return context.name.toUpperCase();
@@ -58,7 +59,9 @@ speak( me ); // Hello, I'm KYLE
 ---
 ### 认为This指向他自己
 
-- 想要在函数内部调用自己的原因:递归/一个在第一次被调用时会解除自己绑定的事件处理器
+- 想要在函数内部调用自己的原因:
+- 递归
+- 一个在第一次被调用时会解除自己绑定的事件处理器
 
 ---
 #### Consider Below Result
@@ -96,6 +99,7 @@ console.log(count);
 ---
 #### 回避this的解决方案
 - 创建另一个对象来持有 count 属性 利用词法作用域来理解
+
 ```javascript
 function foo(num) {
 	console.log( "foo: " + num );
@@ -129,7 +133,7 @@ console.log( data.count );
 - 通常需要通过一个指向它的词法标识符（变量）得到函数对象的引用
 
 ---
-#### think about these two functions
+#### 思考这两个function
 ```javascript
 function foo() {
 	foo.count = 4; // `foo` 引用它自己
@@ -148,6 +152,7 @@ setTimeout( function(){
 ---
 #### another solution
 - 完全依赖于foo的词法作用域
+
 ```javascript
 function foo(num) {
 	console.log( "foo: " + num );
@@ -176,6 +181,7 @@ console.log( foo.count ); // 4
 ---
 #### One more solution
 - 强迫 **this** 指向 foo函数对象
+
 ```javascript
 function foo(num) {
 	console.log( "foo: " + num );
@@ -211,6 +217,7 @@ console.log( foo.count ); // 4
 --- 
 #### Bad ones
 - Bridge never exist
+
 ```javascript
 function foo() {
 	var a = 2;
@@ -230,7 +237,7 @@ foo(); //undefined
 - 试图用 this 在 foo() 和 bar() 的词法作用域间建立一座桥,使得bar() 可以访问 foo()内部作用域的变量 a
 - It is impossible, 你不能使用**this**引用在词法作用域中查找东西
 - 每当你感觉自己正在试图使用**this**来进行词法作用域的查询时,提醒自己:这里没有桥
-
+---
 ### Step conclusion
 - **this**不是编写时绑定,而是运行时绑定。它依赖于函数调用的上下文条件
 - **this**绑定与函数声明的位置没有任何关系，而与函数被调用的方式紧密相连
@@ -238,3 +245,5 @@ foo(); //undefined
 - 函数是 如何 被调用的，被传递了什么参数等信息
 - 这个记录的属性之一，就是在函数执行期间将被使用的 this 引用
 - 函数的 调用点（call-site）用以来判定它的执行如何绑定 this
+---
+## Call Site
