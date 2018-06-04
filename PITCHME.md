@@ -519,6 +519,7 @@ bar.call( window ); // 2
 ---
 #### example-1
 - 用**Hard Binding**将一个函数包装起来的最典型的方法,是为所有传入的参数和传出的返回值创建一个通道
+
 ```javascript
 function foo(something) {
 	console.log( this.a, something );
@@ -566,6 +567,7 @@ console.log( b ); // 5
 #### In ES5
 - **Hard Binding**已作为 ES5 的内建工具提供：Function.prototype.bind
 - bind(..)返回一个硬编码的新函数,它使用你指定的**this**环境来调用原本的函数
+
 ```javascript
 function foo(something) {
 	console.log( this.a, something );
@@ -763,6 +765,7 @@ var bar = foo()
 #### 被忽略的this
 - 如果你传递 null 或 undefined 作为 call apply 或 bind 的 this 绑定参数 
 - 那么这些值会被忽略掉 取而代之的是 默认绑定 规则将适用于这个调用
+
 ```javascript
 function foo() {
 	console.log( this.a );
@@ -778,6 +781,8 @@ foo.call( null ); // 2
 - 使用 apply(..) 来将一个数组散开 从而作为函数调用的参数
 - bind(..) 可以柯里化参数（预设值）也可能非常有用
 - 两种工具都要求第一个参数是 this 绑定 但是目标函数不关心this null就成为了一个合理的占位
+---
+### 
 ```javascript
 function foo(a,b) {
 	console.log( "a:" + a + ", b:" + b );
@@ -829,6 +834,7 @@ bar( 3 ); // a:2, b:3
 ### 间接
 - 当有意或无意地创建对函数的“间接引用（indirect reference）”
 - 在那样的情况下，当那个函数引用被调用时，默认绑定 会使用
+
 ```javascript
 function foo() {
 	console.log( this.a );
@@ -905,7 +911,8 @@ setTimeout( obj2.foo, 10 ); // name: obj   <---- soft binding
 - 箭头函数不是通过 function 关键字声明的 而是通过所谓的“大箭头”操作符：=>
 - 与使用四种标准的 this 规则不同的是 箭头函数从封闭它的（函数或全局）作用域采用 this 绑定
 ---
-#### 
+#### code
+
 ```javascript
 function foo() {
   // 返回一个箭头函数
@@ -967,7 +974,7 @@ foo.call( obj ); // 2
 - 仅使用词法作用域并忘掉虚伪的 this 风格代码
 - 完全接受 this 风格机制 包括在必要的时候使用 bind(..) 并尝试避开 self = this 和箭头函数的词法 this技巧
 - 开发时二选一
-
+--- 
 ## This 总结-1
 - 执行中的函数判定 this 绑定需要找到这个函数的直接调用点 找到之后 四种规则将会以这种优先顺序施用于调用点
 - 通过 new 调用 -> 使用新构建的对象
@@ -976,5 +983,5 @@ foo.call( obj ); // 2
 ---
 ## This 总结-2
 - 默认:strict mode 下是 undefined 否则就是全局对象
-- 如果你想“安全”地忽略 this 绑定 一个像 ø = Object.create(null) 这样的“DMZ”对象是一个很好的占位值 以保护 global 对象不受意外的副作用影响
-- ES6 的箭头方法使用词法作用域来决定 this 绑定 这意味着它们采用封闭他们的函数调用作为 this 绑定
+- 如果你想“安全”地忽略 this 绑定 一个像 ```ø = Object.create(null)``` 这样的“DMZ”对象是一个很好的占位值 以保护 global 对象不受意外的副作用影响
+- ES6 的箭头方法使用词法作用域来决定 this 绑定，这意味着它们采用封闭他们的函数调用作为 this 绑定
