@@ -20,8 +20,8 @@
         <entry file="file://$PROJECT_DIR$/PITCHME.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="169">
-                <caret line="767" lean-forward="true" selection-start-line="767" selection-end-line="767" />
+              <first_editor relative-caret-position="147">
+                <caret line="355" column="3" selection-start-line="355" selection-start-column="3" selection-end-line="355" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -29,6 +29,11 @@
         </entry>
       </file>
     </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>忽略</find>
+    </findStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -107,12 +112,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1528054776510</updated>
-      <workItem from="1528054777864" duration="11901000" />
+      <workItem from="1528054777864" duration="12172000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11901000" />
+    <option name="totallyTimeSpent" value="12172000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="790" extended-state="6" />
@@ -157,8 +162,8 @@
     <entry file="file://$PROJECT_DIR$/PITCHME.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="169">
-            <caret line="767" lean-forward="true" selection-start-line="767" selection-end-line="767" />
+          <first_editor relative-caret-position="147">
+            <caret line="355" column="3" selection-start-line="355" selection-start-column="3" selection-end-line="355" selection-end-column="3" />
           </first_editor>
           <second_editor />
         </state>

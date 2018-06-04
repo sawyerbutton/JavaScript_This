@@ -353,6 +353,7 @@ var obj = { // obj 就是foo的环境变量
 
 obj.foo(); // 2
 ```
+---
 ##### explanation
 - foo()被声明然后作为引用属性添加到 obj 上的方式
 - 无论foo()是否一开始就在obj上被声明,还是后来作为引用添加（如上面代码所示,这个 函数 都不被obj所真正“拥有”或“包含”
@@ -385,7 +386,7 @@ obj1.obj2.foo(); // 42
 - this binding 最沮丧的事情就是当一个**隐含绑定**丢失了它的绑定
 - 通常意味着它会退回到**默认绑定**
 - 根据strict mode的状态,其结果不是全局对象就是 undefined
-
+---
 ##### example
 ```javascript
 function foo() {
